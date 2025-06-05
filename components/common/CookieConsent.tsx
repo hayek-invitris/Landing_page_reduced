@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-
-type CookiePreferences = {
-  necessary: boolean;
-  analytics: boolean;
-  marketing: boolean;
-  preferences: boolean;
-};
+import { 
+  getCookiePreferences, 
+  saveCookiePreferences, 
+  clearNonNecessaryCookies,
+  type CookiePreferences 
+} from '@/lib/cookie-manager';
 
 export default function CookieConsent() {
   const [showConsent, setShowConsent] = useState(false);
@@ -24,23 +23,19 @@ export default function CookieConsent() {
   useEffect(() => {
     setMounted(true);
     
-    // Force show the consent banner for testing
-    // Comment this out in production
-    setShowConsent(true);
-    
     try {
+      // Get existing preferences
+      const existingPreferences = getCookiePreferences();
+      
       // Check if user has already consented
       const consent = localStorage.getItem('cookieConsent');
       if (!consent) {
         setShowConsent(true);
       } else {
-        try {
-          const savedPreferences = JSON.parse(consent);
-          setPreferences(savedPreferences);
-        } catch {
-          // If parsing fails, show consent again
-          setShowConsent(true);
-        }
+        setPreferences(existingPreferences);
+        // Force show the consent banner for testing
+        // Comment this out in production
+        setShowConsent(true);
       }
     } catch (error) {
       // Handle case where localStorage is not available
@@ -53,43 +48,33 @@ export default function CookieConsent() {
   if (!mounted) return null;
 
   const acceptAll = () => {
-    try {
-      const allAccepted = {
-        necessary: true,
-        analytics: true,
-        marketing: true,
-        preferences: true,
-      };
-      localStorage.setItem('cookieConsent', JSON.stringify(allAccepted));
-      setPreferences(allAccepted);
-    } catch (error) {
-      console.error('Error saving to localStorage:', error);
-    }
+    const allAccepted = {
+      necessary: true,
+      analytics: true,
+      marketing: true,
+      preferences: true,
+    };
+    saveCookiePreferences(allAccepted);
+    setPreferences(allAccepted);
     setShowConsent(false);
   };
 
   const acceptNecessary = () => {
-    try {
-      const necessaryOnly = {
-        necessary: true,
-        analytics: false,
-        marketing: false,
-        preferences: false,
-      };
-      localStorage.setItem('cookieConsent', JSON.stringify(necessaryOnly));
-      setPreferences(necessaryOnly);
-    } catch (error) {
-      console.error('Error saving to localStorage:', error);
-    }
+    const necessaryOnly = {
+      necessary: true,
+      analytics: false,
+      marketing: false,
+      preferences: false,
+    };
+    saveCookiePreferences(necessaryOnly);
+    clearNonNecessaryCookies(necessaryOnly);
+    setPreferences(necessaryOnly);
     setShowConsent(false);
   };
 
   const savePreferences = () => {
-    try {
-      localStorage.setItem('cookieConsent', JSON.stringify(preferences));
-    } catch (error) {
-      console.error('Error saving to localStorage:', error);
-    }
+    saveCookiePreferences(preferences);
+    clearNonNecessaryCookies(preferences);
     setShowConsent(false);
   };
 
