@@ -1,0 +1,42 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100px; /* Adjust based on your logo sizes */
+  background-color: transparent; 
+}
+
+.slider-track {
+  display: flex;
+  /* 
+    The width should be: (slideWidth * numberOfLogos * 2)
+    Example: if each slide is 250px and you have 5 logos,
+    5 logos * 2 = 10 slides total, so 250px * 10 = 2500px
+  */
+  width: calc(250px * 12); /* Adjusted for 6 logos */
+  animation: scroll 25s linear infinite; /* Increased from 15s to 40s for slower animation */
+}
+
+.slide {
+  width: 270px;       /* Adjust to fit your logos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;     /* Prevents the slides from shrinking */
+}
+
+.slide img {
+  max-width: 150%;
+  max-height: 100px;   /* Adjust as needed */
+  object-fit: contain;
+}
+
+/* Move from 0% to -50% to reveal the second set of images seamlessly */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
