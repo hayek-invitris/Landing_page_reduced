@@ -37,7 +37,7 @@ export function Submenu({ label, items }: SubmenuProps) {
       onMouseLeave={handleMouseLeave}
     >
       <button 
-        className="text-gray-200 hover:text-white transition-colors text-base font-medium flex items-center gap-1"
+        className="text-gray-200 hover:text-white transition-colors text-xl font-medium flex items-center gap-1"
         onClick={() => setIsOpen(!isOpen)}
       >
         {label}
@@ -54,7 +54,7 @@ export function Submenu({ label, items }: SubmenuProps) {
             <Link
               key={item.href}
               href={item.href}
-              className="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10 transition-colors font-medium"
+              className="block px-4 py-2 text-lg text-gray-200 hover:bg-white/10 transition-colors font-medium"
             >
               {item.label}
             </Link>

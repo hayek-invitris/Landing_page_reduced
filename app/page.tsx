@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Syringe, Waves, Zap, Cog } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { DraggableScroll } from "@/components/landing/draggable-scroll"
+
 import InfiniteSlider from "@/components/landing/InfiniteSlider"
 import { NavBar } from "@/components/common/NavBar"
 import { Footer } from "@/components/common/Footer"
@@ -46,21 +46,23 @@ export default function LandingPage() {
       link: "#",
       content: "Invitris has been awarded a prestigious European Innovation Council grant to accelerate our groundbreaking biotechnology research and development initiatives."
     },
+    
     {
-      title: "Antibody Discrete Diffusion for Full Generation of Antibody Sequences",
-      image: "/Images/shutterstock_2036608064-scaled.jpg",
-      link: "#",
-      content: "Our research team has developed a novel approach for antibody sequence generation using discrete diffusion models, promising significant advances in therapeutic antibody discovery."
+      title: "You shall not pass: Wie zellfreie Moleküle das Böse bekämpfen",
+      image: "/Images/dna-g1adaf9d6b_1920.jpg",
+      link: "https://www.im-io.de/you-shall-not-pass-wie-zellfreie-molekuele-das-boese-bekaempfen/",
+      content: "In this IM+io interview, our CEO Patrick Grossmann describes how their cell-free system synthetically produces bacteriophages, antibodies and even vaccines directly from DNA templates—eliminating the need for traditional cell cultures and enabling precise, rapid manufacturing of targeted therapeutics. Leveraging AI-driven optimization of reaction conditions and an automated phage printer developed with EIC Accelerator support, they aim to generate personalized treatments against antibiotic-resistant infections in under eight hours. Beyond healthcare, Invitris' versatile platform can also be licensed for nanobody production, vaccine development and applications in agriculture or environmental biotechnology."
+
     },
     {
-      title: "New Breakthrough in Protein Synthesis Technology",
-      image: "/Images/shutterstock_2036608064-scaled.jpg",
-      link: "#",
-      content: "Invitris announces a major breakthrough in protein synthesis technology that could revolutionize the production of complex biological molecules for research and therapeutic applications."
+      title: "Invitris receives 250,000 euros for complete spin-off from TUM",
+      image: "/Images/News Section/Invitris_TUM_2000x1098-1536x843.webp",
+      link: "https://www.izb-online.de/izb-biotech-news/invitris-erhaelt-250-000-euro-fuer-vollstaendige-ausgruendung-aus-der-tum-innovations-und-gruenderzentrum-biotechnologie-izb/",
+      content: "In May 2023, Invitris was selected by INCATE as the first company to receive a €250 000 Phase II grant—enabling the completion of its spin-out from the TUM's Chair of Synthetic Biological Systems and the scale-up of antimicrobial protein production to combat antibiotic resistance. The funding will support the transition of Invitris' cell-free platform into a GMP-compliant process for manufacturing bacteriophages, phage-derived endolysins and other antimicrobial proteins at scale. Having proven its technology and business model during INCATE Phase I (January 2022) and secured a place in Y Combinator's Winter '23 cohort, Invitris is now poised to accelerate next-generation phage therapies toward broad clinical and industrial applications."
     },
     {
-      title: "Advanced Applications in Biotechnology Research",
-      image: "/Images/shutterstock_2036608064-scaled.jpg",
+      title: "Invitris in one of the largest daily newspapers in 🇩🇪 !",
+      image: "/Images/dna-g1adaf9d6b_1920.jpg",
       link: "#",
       content: "Discover how our cutting-edge biotechnology platforms are enabling researchers to push the boundaries of what's possible in multiple scientific disciplines."
     },
@@ -192,8 +194,7 @@ export default function LandingPage() {
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Prokaryotic Production */}
                 <div className="bg-gray-500/15 backdrop-blur-sm rounded-xl p-8 border border-gray-400/10">
-                  <h4 className="text-2xl font-bold text-gray-100 mb-6 flex items-center gap-2">
-                    <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+                  <h4 className="text-2xl font-bold text-gray-100 mb-6">
                     Prokaryotic (Bacterial) Production
                   </h4>
                   <ul className="space-y-4 text-gray-300">
@@ -214,8 +215,7 @@ export default function LandingPage() {
                 
                 {/* Mammalian Production */}
                 <div className="bg-gray-500/15 backdrop-blur-sm rounded-xl p-8 border border-gray-400/10">
-                  <h4 className="text-2xl font-bold text-gray-100 mb-6 flex items-center gap-2">
-                    <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
+                  <h4 className="text-2xl font-bold text-gray-100 mb-6">
                     Mammalian (e.g., CHO, HEK) Production
                   </h4>
                   <ul className="space-y-4 text-gray-300">
@@ -355,10 +355,18 @@ export default function LandingPage() {
                         src={market.image || "/placeholder.svg"}
                         alt={market.title}
                         fill
-                        className="object-cover transition-transform group-hover:scale-105"
+                        className={`transition-transform group-hover:scale-105 ${
+                          market.title === "Industrial Biotechnology" 
+                            ? "object-cover object-center" 
+                            : "object-cover"
+                        }`}
                       />
                       <div className="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/70" />
-                      <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                      <div className={`absolute inset-0 p-8 flex flex-col ${
+                        market.title === "Industrial Biotechnology" 
+                          ? "justify-center items-center text-center" 
+                          : "justify-end"
+                      }`}>
                         <h3 className="text-3xl font-bold text-white mb-3">{market.title}</h3>
                         <p className="text-white text-base mb-5">{market.description}</p>
                         <button
@@ -443,8 +451,8 @@ export default function LandingPage() {
               <br />
               from Invitris
             </h2>
-            <DraggableScroll className="pb-12 bg-black">
-              <div className="flex gap-8">
+            <div className="overflow-x-auto pb-4 scrollbar-large-interaction">
+              <div className="flex gap-8 min-w-max">
                 {newsItems.map((article, index) => (
                   <div key={index} className="group relative flex-shrink-0 w-[420px] bg-gray-900 rounded-lg border border-gray-800">
                     <div className="aspect-[16/9] relative rounded-lg overflow-hidden">
@@ -469,7 +477,7 @@ export default function LandingPage() {
                   </div>
                 ))}
               </div>
-            </DraggableScroll>
+            </div>
           </div>
         </section>
 

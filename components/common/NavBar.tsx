@@ -145,7 +145,7 @@ export function NavBar() {
           
           {/* Desktop Navigation - Hidden on mobile */}
           <nav className="hidden md:flex flex-1 items-center justify-center gap-12">
-            <Link className="text-gray-200 hover:text-white transition-colors text-base font-medium" href="/technology">
+            <Link className="text-gray-200 hover:text-white transition-colors text-xl font-medium" href="/technology">
               Technology
             </Link>
             <Submenu
@@ -169,10 +169,10 @@ export function NavBar() {
           
           {/* Desktop Right Links - Hidden on mobile */}
           <div className="hidden md:flex items-center gap-6">
-            <Link className="text-gray-200 hover:text-white transition-colors text-base font-medium" href="/about/contact">
+            <Link className="text-gray-200 hover:text-white transition-colors text-xl font-medium" href="/about/contact">
               Contact
             </Link>
-            <Link className="text-gray-200 hover:text-white transition-colors text-base font-medium" href="/#news">
+            <Link className="text-gray-200 hover:text-white transition-colors text-xl font-medium" href="/#news">
               News
             </Link>
           </div>
@@ -206,7 +206,7 @@ export function NavBar() {
         <div className="flex flex-col h-full pt-24 px-6">
           <nav className="flex flex-col space-y-6">
             <Link 
-              className="text-gray-200 hover:text-white transition-colors text-lg font-medium py-2"
+              className="text-gray-200 hover:text-white transition-colors text-2xl font-medium py-2"
               href="/technology"
               onClick={closeMobileMenu}
             >
@@ -215,31 +215,31 @@ export function NavBar() {
             
             {/* Mobile Industries Submenu */}
             <div className="space-y-3">
-              <h3 className="text-gray-200 text-lg font-medium">Industries</h3>
+              <h3 className="text-gray-200 text-2xl font-medium">Industries</h3>
               <div className="pl-4 space-y-3">
                 <Link 
-                  className="block text-gray-300 hover:text-white transition-colors text-base"
+                  className="block text-gray-300 hover:text-white transition-colors text-xl"
                   href="/industries/biopharmaceuticals"
                   onClick={closeMobileMenu}
                 >
                   Biopharmaceuticals
                 </Link>
                 <Link 
-                  className="block text-gray-300 hover:text-white transition-colors text-base"
+                  className="block text-gray-300 hover:text-white transition-colors text-xl"
                   href="/industries/amr-phages"
                   onClick={closeMobileMenu}
                 >
                   AMR and Phages
                 </Link>
                 <Link 
-                  className="block text-gray-300 hover:text-white transition-colors text-base"
+                  className="block text-gray-300 hover:text-white transition-colors text-xl"
                   href="/industries/industrial"
                   onClick={closeMobileMenu}
                 >
                   Industrial Biotechnology
                 </Link>
                 <Link 
-                  className="block text-gray-300 hover:text-white transition-colors text-base"
+                  className="block text-gray-300 hover:text-white transition-colors text-xl"
                   href="/industries/agriculture"
                   onClick={closeMobileMenu}
                 >
@@ -250,17 +250,17 @@ export function NavBar() {
 
             {/* Mobile About Submenu */}
             <div className="space-y-3">
-              <h3 className="text-gray-200 text-lg font-medium">About</h3>
+              <h3 className="text-gray-200 text-2xl font-medium">About</h3>
               <div className="pl-4 space-y-3">
                 <Link 
-                  className="block text-gray-300 hover:text-white transition-colors text-base"
+                  className="block text-gray-300 hover:text-white transition-colors text-xl"
                   href="/about/company"
                   onClick={closeMobileMenu}
                 >
                   Company
                 </Link>
                 <Link 
-                  className="block text-gray-300 hover:text-white transition-colors text-base"
+                  className="block text-gray-300 hover:text-white transition-colors text-xl"
                   href="/about/careers"
                   onClick={closeMobileMenu}
                 >
@@ -272,14 +272,14 @@ export function NavBar() {
             <hr className="border-white/10 my-6" />
 
             <Link 
-              className="text-gray-200 hover:text-white transition-colors text-lg font-medium py-2"
+              className="text-gray-200 hover:text-white transition-colors text-2xl font-medium py-2"
               href="/about/contact"
               onClick={closeMobileMenu}
             >
               Contact
             </Link>
             <Link 
-              className="text-gray-200 hover:text-white transition-colors text-lg font-medium py-2"
+              className="text-gray-200 hover:text-white transition-colors text-2xl font-medium py-2"
               href="/#news"
               onClick={closeMobileMenu}
             >

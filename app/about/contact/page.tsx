@@ -104,7 +104,7 @@ export default function ContactPage() {
         ])
 
       if (error) {
-        // Handle specific database errors more gracefully
+        // Handle specific database errors
         if (error.message.includes('relation "contact_submissions" does not exist')) {
           toast.error("Contact form is currently unavailable. Please try again later or contact us directly at contact@invitris.com")
         } else {
@@ -289,7 +289,7 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <h3 className="font-bold text-white">Headquarters</h3>
                     <p className="text-gray-300">
-                      Am Klosterspitz 19
+                      Am Klopferspitz 19
                       <br />
                       82152, Planegg-Martinsried
                       <br />

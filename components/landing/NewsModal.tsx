@@ -56,17 +56,6 @@ export function NewsModal({ article }: NewsModalProps) {
             with potential applications spanning multiple areas of biotechnology and medicine.
             The implications for future research and development are significant.
           </p>
-          
-          {/* Key highlights section */}
-          <div className="py-6 px-6 bg-zinc-800 rounded-lg mt-6">
-            <h3 className="text-xl font-bold text-white mb-4">Key Highlights</h3>
-            <ul className="list-disc pl-5 space-y-2">
-              <li>Breakthrough advancements in protein research methodologies</li>
-              <li>Potential applications in therapeutic development</li>
-              <li>Collaborative efforts with leading research institutions</li>
-              <li>Significant improvements in efficiency and scalability</li>
-            </ul>
-          </div>
         </div>
         
         {/* Action button */}

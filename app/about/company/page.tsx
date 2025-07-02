@@ -30,7 +30,7 @@ export default function CompanyPage() {
               One of the biggest impacts lies with antimicrobial proteins: one of our largest health-economic burdens is antimicrobial resistance (AMR). AMR is predicted to cause 10 million deaths per year – or 25% more deaths than cancer. This is the future predicted by an expert panel if we do not create new drugs against AMR NOW!
               </p>
               <p className="text-gray-700 mb-4">
-              OParticularly, drug-resistant bacteria are threatening to catapult our global societies back into the pre-antibiotic era, inhibiting not only the successful treatment of common infections but also all therapies that rely on infection control, including surgeries and cancer therapy. Besides this endless suffering, this may cause an economic burden of several trillions of US Dollars to healthcare systems worldwide.
+              Particularly, drug-resistant bacteria are threatening to catapult our global societies back into the pre-antibiotic era, inhibiting not only the successful treatment of common infections but also all therapies that rely on infection control, including surgeries and cancer therapy. Besides this endless suffering, this may cause an economic burden of several trillions of US Dollars to healthcare systems worldwide.
               </p>
               <p className="text-gray-700">
               Through advanced protein expression technologies, including cell-free protein expression, we can create highly complex multiprotein structures such as bacteriophages, endolysins, and tailocins. These innovative solutions are key to combating AMR effectively—for human health, veterinary medicine, agriculture, and food industries alike.
