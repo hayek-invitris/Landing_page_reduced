@@ -6,6 +6,7 @@ import Analytics from "../components/common/Analytics";
 import Marketing from "../components/common/Marketing";
 import PreferencesManager from "../components/common/PreferencesManager";
 import { Toaster } from "sonner";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({
       >
         {children}
         <Analytics />
+        <VercelAnalytics />
         <Marketing />
         <PreferencesManager />
         <CookieConsent />

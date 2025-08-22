@@ -78,12 +78,13 @@ export default function LandingPage() {
         <div className="relative w-full bg-black overflow-hidden">
           <div className="absolute inset-0">
             <div ref={heroImageRef} className="absolute inset-0">
-              <Image
-                src="/Images/image.png"
-                alt="Invitris Background"
-                fill
-                priority
-                className="object-cover"
+              <video
+                src="/Images/l,koiuyt.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
