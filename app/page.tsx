@@ -6,7 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import InfiniteSlider from "@/components/landing/InfiniteSlider"
-import { NavBar } from "@/components/common/NavBar"
+import { SectionNavBar } from "@/components/common/SectionNavBar"
 import { Footer } from "@/components/common/Footer"
 import { Modal } from "@/components/ui/modal"
 import { AmrPhagesModal } from "@/components/landing/AmrPhagesModal"
@@ -39,38 +39,70 @@ export default function LandingPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const newsItems = [
-    {
-      title: "Invitris wins EIC grant",
-      image: "/Images/EIC.png",
-      link: "#",
-      content: "Invitris has been awarded a prestigious European Innovation Council grant to accelerate our groundbreaking biotechnology research and development initiatives."
-    },
+  // Handle scrolling to section when coming from another page with hash
+  useEffect(() => {
+    const handleHashScroll = () => {
+      const hash = window.location.hash.substring(1);
+      if (hash) {
+        // Small delay to ensure the page is fully loaded
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      }
+    };
+
+    // Handle initial hash on page load
+    handleHashScroll();
     
+    // Handle hash changes
+    window.addEventListener('hashchange', handleHashScroll);
+    return () => window.removeEventListener('hashchange', handleHashScroll);
+  }, []);
+
+  const newsItems = [
     {
       title: "You shall not pass: Wie zellfreie Moleküle das Böse bekämpfen",
       image: "/Images/dna-g1adaf9d6b_1920.jpg",
       link: "https://www.im-io.de/you-shall-not-pass-wie-zellfreie-molekuele-das-boese-bekaempfen/",
+      hasExternalLink: true,
+      date: "August 15, 2025",
       content: "In this IM+io interview, our CEO Patrick Grossmann describes how their cell-free system synthetically produces bacteriophages, antibodies and even vaccines directly from DNA templates—eliminating the need for traditional cell cultures and enabling precise, rapid manufacturing of targeted therapeutics. Leveraging AI-driven optimization of reaction conditions and an automated phage printer developed with EIC Accelerator support, they aim to generate personalized treatments against antibiotic-resistant infections in under eight hours. Beyond healthcare, Invitris' versatile platform can also be licensed for nanobody production, vaccine development and applications in agriculture or environmental biotechnology."
-
+    },
+    {
+      title: "Invitris wins EIC grant",
+      image: "/Images/EIC.png",
+      link: "#",
+      hasExternalLink: false,
+      date: "July 10, 2025",
+      content: "Invitris has been awarded a prestigious European Innovation Council grant to accelerate our groundbreaking biotechnology research and development initiatives."
     },
     {
       title: "Invitris receives 250,000 euros for complete spin-off from TUM",
       image: "/Images/News Section/Invitris_TUM_2000x1098-1536x843.webp",
       link: "https://www.izb-online.de/izb-biotech-news/invitris-erhaelt-250-000-euro-fuer-vollstaendige-ausgruendung-aus-der-tum-innovations-und-gruenderzentrum-biotechnologie-izb/",
+      hasExternalLink: true,
+      date: "May 15, 2023",
       content: "In May 2023, Invitris was selected by INCATE as the first company to receive a €250 000 Phase II grant—enabling the completion of its spin-out from the TUM's Chair of Synthetic Biological Systems and the scale-up of antimicrobial protein production to combat antibiotic resistance. The funding will support the transition of Invitris' cell-free platform into a GMP-compliant process for manufacturing bacteriophages, phage-derived endolysins and other antimicrobial proteins at scale. Having proven its technology and business model during INCATE Phase I (January 2022) and secured a place in Y Combinator's Winter '23 cohort, Invitris is now poised to accelerate next-generation phage therapies toward broad clinical and industrial applications."
     },
     {
       title: "Invitris in one of the largest daily newspapers in 🇩🇪 !",
       image: "/Images/dna-g1adaf9d6b_1920.jpg",
       link: "#",
+      hasExternalLink: false,
+      date: "March 8, 2023",
       content: "Discover how our cutting-edge biotechnology platforms are enabling researchers to push the boundaries of what's possible in multiple scientific disciplines."
     },
   ]
 
   return (
     <div className="flex flex-col min-h-screen relative bg-black text-white">
-      <NavBar />
+      <SectionNavBar />
       
       <main className="flex-1">
     
@@ -108,7 +140,7 @@ export default function LandingPage() {
                   Crafting exceptional digital experiences through innovative design and cutting-edge technology.
                 </p>
 
-                <Link href="/technology">
+                <Link href= "/#cell-free" >
                   <Button 
                     className="bg-transparent backdrop-blur-sm text-white hover:bg-white/10 border border-white/30 px-8 py-6 text-lg font-medium rounded-full transition-all"
                   >

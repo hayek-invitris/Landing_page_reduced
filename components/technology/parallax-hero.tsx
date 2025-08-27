@@ -2,9 +2,9 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+// import { Button } from "@/components/ui/button";
+// import { ArrowRight } from "lucide-react";
+// import Link from "next/link";
 
 interface ParallaxHeroProps {
   title: string;
@@ -52,7 +52,7 @@ export function ParallaxHero({ title, description, imageSrc }: ParallaxHeroProps
             <p className="mx-auto max-w-[800px] text-gray-300 text-xl md:text-2xl/relaxed">
               {description}
             </p>
-            <div className="mt-8">
+            {/* <div className="mt-8">
               <Link href="/about/contact">
                 <Button 
                   className="bg-transparent backdrop-blur-sm text-white hover:bg-white/10 border border-white/30 px-8 py-6 text-lg font-medium rounded-full transition-all"
@@ -61,7 +61,7 @@ export function ParallaxHero({ title, description, imageSrc }: ParallaxHeroProps
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

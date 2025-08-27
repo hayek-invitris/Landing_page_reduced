@@ -161,7 +161,7 @@ export function NavBar() {
               label="About"
               items={[
                 { label: "Company", href: "/about/company" },
-                { label: "Careers", href: "/about/careers" },
+                // { label: "Careers", href: "/about/careers" }, // Temporarily disabled
                 
               ]}
             />
@@ -259,13 +259,14 @@ export function NavBar() {
                 >
                   Company
                 </Link>
-                <Link 
+                {/* Careers link temporarily disabled */}
+                {/* <Link 
                   className="block text-gray-300 hover:text-white transition-colors text-xl"
                   href="/about/careers"
                   onClick={closeMobileMenu}
                 >
                   Careers
-                </Link>
+                </Link> */}
               </div>
             </div>
 

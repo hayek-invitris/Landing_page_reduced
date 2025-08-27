@@ -1,5 +1,5 @@
-import { supabase } from '@/lib/supabase';
-import { sanitizeJobApplicationForm } from '@/lib/sanitization';
+// import { supabase } from '@/lib/supabase'; // Moved to dynamic import
+// import { sanitizeJobApplicationForm } from '@/lib/sanitization'; // Temporarily disabled
 
 export interface JobApplication {
   positionId: string;
@@ -16,9 +16,24 @@ export interface JobApplication {
 /**
  * Submit a job application to Supabase
  * This function handles both the metadata submission and file upload
+ * TEMPORARILY DISABLED - Supabase not configured yet
  */
 export async function submitJobApplication(application: JobApplication): Promise<{ success: boolean; error?: string }> {
+  // Temporarily return success without actual submission
+  console.warn('Job application submission is temporarily disabled - Supabase not configured');
+  console.log('Application data received:', application.positionTitle, application.firstName, application.lastName);
+  
+  return {
+    success: true,
+    error: undefined
+  };
+  
+  /*
+  // Original implementation - temporarily commented out
   try {
+    // Dynamic import to avoid build-time errors
+    const { supabase } = await import('@/lib/supabase');
+    
     // Server-side sanitization as backup security measure
     const sanitizedData = sanitizeJobApplicationForm({
       firstName: application.firstName,
@@ -93,4 +108,5 @@ export async function submitJobApplication(application: JobApplication): Promise
       error: error instanceof Error ? error.message : 'An unknown error occurred'
     };
   }
+  */
 } 

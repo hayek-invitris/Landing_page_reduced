@@ -1,16 +1,17 @@
 import Image from "next/image"
-import Link from "next/link"
+// import Link from "next/link" // Temporarily disabled
 import { Eye, Crosshair } from "lucide-react"
 import { ParallaxHero } from "@/components/technology/parallax-hero"
-import { NavBar } from "@/components/common/NavBar"
+import { SectionNavBar } from "@/components/common/SectionNavBar"
 import { Footer } from "@/components/common/Footer"
 
 export default function CompanyPage() {
   return (
-    <div className="flex flex-col min-h-screen dark bg-black">
-      <NavBar />
+    
+      <div className="flex flex-col min-h-screen dark bg-black">
+        <SectionNavBar />
 
-      {/* Hero Section with Parallax */}
+        {/* Hero Section with Parallax */}
       <ParallaxHero 
         title="About Invitris"
         description="Pioneering the future of biotechnology through innovation and collaboration"
@@ -175,17 +176,21 @@ export default function CompanyPage() {
               Join our team of innovators and visionaries working at the cutting edge of biotechnology. 
               We&apos;re looking for talented individuals who are passionate about making a difference.
             </p>
-            <Link 
+            {/* Careers page temporarily disabled */}
+            {/* <Link 
               href="/about/careers" 
               className="inline-flex h-12 items-center justify-center rounded-md bg-[#1a3d5c] px-8 text-white font-medium hover:bg-[#2c5a85] focus:outline-none focus:ring-2 focus:ring-white/20 transition-colors"
             >
               View Open Positions
-            </Link>
+            </Link> */}
+            <p className="text-gray-400 text-sm">
+              Career opportunities coming soon. Please check back later.
+            </p>
           </div>
         </div>
       </section>
       <Footer />
-    </div>
+      </div>
   )
 }
 

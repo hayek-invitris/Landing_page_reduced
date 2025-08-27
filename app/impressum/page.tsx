@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { NavBar } from "@/components/common/NavBar"
+import { SectionNavBar } from "@/components/common/SectionNavBar"
 import { Footer } from "@/components/common/Footer"
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ImpressumPage() {
   return (
     <div className="flex flex-col min-h-screen dark bg-black">
-      <NavBar />
+      <SectionNavBar />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <h1 className="text-4xl font-bold mb-8 text-white">Impressum</h1>
         

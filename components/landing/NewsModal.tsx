@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Calendar, User, Tag } from "lucide-react"
+import { ArrowRight, Calendar } from "lucide-react"
 import Link from "next/link"
 
 interface NewsArticle {
@@ -8,6 +8,8 @@ interface NewsArticle {
   image: string
   content: string
   link: string
+  hasExternalLink: boolean
+  date: string
 }
 
 interface NewsModalProps {
@@ -22,7 +24,7 @@ export function NewsModal({ article }: NewsModalProps) {
           src={article.image}
           alt={article.title}
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>
@@ -35,15 +37,7 @@ export function NewsModal({ article }: NewsModalProps) {
         <div className="flex flex-wrap gap-4 mb-6 text-sm text-slate-400">
           <div className="flex items-center gap-1">
             <Calendar className="h-4 w-4" />
-            <span>June 15, 2023</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <User className="h-4 w-4" />
-            <span>Invitris Research Team</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <Tag className="h-4 w-4" />
-            <span>Biotechnology, Research</span>
+            <span>{article.date}</span>
           </div>
         </div>
         
@@ -59,14 +53,16 @@ export function NewsModal({ article }: NewsModalProps) {
         </div>
         
         {/* Action button */}
-        <div className="flex justify-center mt-8">
-          <Link href={article.link}>
-            <Button className="bg-[#1a3d5c] text-white hover:bg-[#152f47] px-8 py-6">
-              Read Full Article
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-        </div>
+        {article.hasExternalLink && (
+          <div className="flex justify-center mt-8">
+            <Link href={article.link}>
+              <Button className="bg-[#1a3d5c] text-white hover:bg-[#152f47] px-8 py-6">
+                Read Full Article
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   )
