@@ -12,6 +12,8 @@ import { Modal } from "@/components/ui/modal"
 import { AmrPhagesModal } from "@/components/landing/AmrPhagesModal"
 import { NewsModal } from "@/components/landing/NewsModal"
 import { useState, useEffect, useRef } from "react"
+import { Infinity } from "lucide-react";
+
 
 export default function LandingPage() {
   const [isAmrModalOpen, setIsAmrModalOpen] = useState(false)
@@ -137,7 +139,7 @@ export default function LandingPage() {
                 </h1>
 
                 <p className="text-base sm:text-lg md:text-xl text-white/80 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-                  Crafting exceptional digital experiences through innovative design and cutting-edge technology.
+                  Shaping the future of drug discovery through cell-free expression and AI-driven design
                 </p>
 
                 <Link href= "/#cell-free" >
@@ -185,24 +187,31 @@ export default function LandingPage() {
                     Invitris: The cell free company
                   </h2>
                   <p className="text-gray-300 text-xl md:text-2xl leading-relaxed">
-                    We are pioneering the future of biotechnology through revolutionary cell-free protein synthesis platforms. 
-                    Our cutting-edge technology eliminates the constraints of traditional cell-based systems, enabling 
-                    unprecedented speed, precision, and scalability in protein engineering and production.
+                    We are redefining the future of biotechnology with revolutionary cell-free protein synthesis. Our universal platform empowers the rapid design, expression, and scalable production of the most complex and hard-to-express proteins, including toxic proteins, membrane proteins and. By moving beyond the limits of traditional cell-based systems, we deliver unmatched speed, precision, and scalability in protein engineering and therapeutic development
                   </p>
                 </div>
                 
-                <div className="grid md:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-4 gap-6">
                   <div className="text-center space-y-3">
-                    <div className="text-3xl md:text-4xl font-bold text-white">10x</div>
+                    <div className="text-3xl md:text-4xl font-bold text-white">20x</div>
                     <div className="text-gray-300 text-sm">Faster protein synthesis compared to traditional methods</div>
                   </div>
                   <div className="text-center space-y-3">
                     <div className="text-3xl md:text-4xl font-bold text-white">100%</div>
-                    <div className="text-gray-300 text-sm">Cell-free platform for maximum flexibility</div>
+                    <div className="text-gray-300 text-sm">High flexibility and tunability with openness of cell-free platform</div>
                   </div>
                   <div className="text-center space-y-3">
-                    <div className="text-3xl md:text-4xl font-bold text-white">∞</div>
-                    <div className="text-gray-300 text-sm">Unlimited possibilities in protein engineering</div>
+                     <div className="flex justify-center items-center">
+                      <Infinity className="w-10 h-10 stroke-[3] text-white" />
+                      </div>
+                      <div className="text-gray-300 text-sm">
+                        Unlimited possibilities in protein engineering
+                        </div>
+                      </div>
+                  <div className="text-center space-y-3"> 
+                    <div className="text-3xl md:text-4xl font-bold text-white">30x </div>
+                    <div className="text-gray-300 text-sm">Higher turnaround</div>
+
                   </div>
                 </div>
               </div>
@@ -228,12 +237,12 @@ export default function LandingPage() {
                 {/* Prokaryotic Production */}
                 <div className="bg-gray-500/15 backdrop-blur-sm rounded-xl p-8 border border-gray-400/10">
                   <h4 className="text-2xl font-bold text-gray-100 mb-6">
-                    Prokaryotic (Bacterial) Production
+                    Prokaryotic cell-free system
                   </h4>
                   <ul className="space-y-4 text-gray-300">
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Ideal for smaller proteins or enzymes that fold correctly in <em>Escherichia coli</em> (or other bacterial hosts)</span>
+                      <span>Ideal for smaller proteins or enzymes that naturally fold in <em>Escherichia coli</em> (or other bacterial hosts)</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
@@ -241,7 +250,7 @@ export default function LandingPage() {
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Swap in any bacterial‐optimized DNA sequence and run the same process parameters</span>
+                      <span>Optimized for microbial proteins such as phages, endolysins, tailocins, and binders, the system supports  incorporation of E. coli codon-optimized DNA sequences with a T7 promoter while maintaining consistent process parameters</span>
                     </li>
                   </ul>
                 </div>
@@ -249,20 +258,20 @@ export default function LandingPage() {
                 {/* Mammalian Production */}
                 <div className="bg-gray-500/15 backdrop-blur-sm rounded-xl p-8 border border-gray-400/10">
                   <h4 className="text-2xl font-bold text-gray-100 mb-6">
-                    Mammalian (e.g., CHO, HEK) Production
+                    Mammalian cell-free expression system
                   </h4>
                   <ul className="space-y-4 text-gray-300">
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-gray-300 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Designed for more complex proteins requiring mammalian post-translational modifications (glycosylation, disulfide bond formation, etc.)</span>
+                      <span>Ideal for synthesizing complex proteins that require mammalian post-translational modifications such as glycosylation and disulfide bond formation</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-gray-300 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Phactory™ reagents are fully compatible with transient or stable mammalian transfection protocols</span>
+                      <span>Overcomes the need for complex transfection protocols</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 bg-gray-300 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Change only the mammalian expression plasmid; keep all buffer recipes, incubation times, and purification steps identical</span>
+                      <span>Fast, scalable, and high yield expression of functional difficult-to express proteins</span>
                     </li>
                   </ul>
                 </div>
@@ -289,23 +298,23 @@ export default function LandingPage() {
                 {[
                   {
                     icon: Syringe,
-                    title: "In vitro protein synthesis",
-                    description: "Advanced protein synthesis capabilities for research and development.",
+                    title: "Cell-free protein synthesis",
+                    description: "Leverage advanced cell-free systems for rapid, flexible protein production",
                   },
                   {
                     icon: Waves,
-                    title: "Ultra-high throughput",
-                    description: "Micro fluids technology enabling rapid and precise experimentation.",
+                    title: "Ultra high-throughput",
+                    description: "Harness microfluidics to screen up to 1,000 proteins per second and accelerate discovery at unmatched throughput",
                   },
                   {
                     icon: Zap,
-                    title: "Rapid protein engineering",
-                    description: "Accelerated protein engineering and optimization processes.",
+                    title: "Rapid protein engineering (Sequence to structure)",
+                    description: "Integrate computational design with high-throughput screening to accelerate protein optimization",
                   },
                   {
                     icon: Cog,
-                    title: "Cell line optimization",
-                    description: "Sophisticated cell line development and enhancement solutions.",
+                    title: "Translational protein production",
+                    description: "Seamlessly scale from picoliter reactions to liter-scale bioreactors while maintaining folding, solubility, and yields",
                   },
                 ].map((platform, index) => (
                   <div key={index} className="group relative overflow-hidden rounded-xl bg-gray-500/15 backdrop-blur-sm p-8 border border-gray-400/10">
@@ -327,7 +336,7 @@ export default function LandingPage() {
                   Our Solutions
                 </h2>
                 <p className="text-gray-300 text-lg">
-                  Our cutting-edge technologies enable breakthrough innovations in biotechnology research and development.
+                  We partner across life sciences to tackle challenges and enable innovation in research and development
                 </p>
               </div>
             </div>
@@ -341,10 +350,10 @@ export default function LandingPage() {
               <div className="space-y-8">
                 <div className="inline-block rounded-lg bg-gray-800 px-4 py-2 text-sm text-gray-100">Markets</div>
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">
-                  Explore R&D Solutions by Industry
+                  Advancing innovation across sectors
                 </h2>
                 <p className="text-gray-300 text-xl md:text-2xl">
-                  Our innovative solutions are transforming multiple sectors across the biotechnology landscape.
+                  Our technologies adapt to diverse industry needs, driving innovation from research to real-world application
                 </p>
               </div>
               <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-2">
@@ -353,32 +362,32 @@ export default function LandingPage() {
                     title: "Biopharmaceuticals",
                     image:
                       "/Images/bacteria-163711_1920.jpg",
-                    description: "Advanced solutions for pharmaceutical development and therapeutic applications.",
-                    link: "Visit Invitris for Biopharmaceuticals",
+                    description: "Deliver advanced solutions to accelerate drug discovery and therapeutic development",
+                    //link: "Visit Invitris for Biopharmaceuticals",
                     //action: () => {},
                   },
                   {
-                    title: "AMR and Phages",
+                    title: "AMR and Phage production",
                     image:
                       "/Images/shutterstock_2036605904-scaled.jpg",
-                    description: "Combating antimicrobial resistance through innovative phage technologies.",
-                    link: "Visit Invitris for AMR and Phages",
+                    description: "Develop targeted phage engineering appraoches to combat antimicrobial resistance",
+                    //link: "Visit Invitris for AMR and Phages",
                     //action: () => setIsAmrModalOpen(true),
                   },
                   {
                     title: "Industrial Biotechnology",
                     image:
                       "/Images/ai-generated-8846860_1920.jpg",
-                    description: "Providing cutting-edge solutions for industrial biotechnology applications.",
-                    link: "Visit Invitris for Industrial",
+                    description: "Provide robust biotechnological solutions for industrial processes and enzyme production",
+                    //link: "Visit Invitris for Industrial",
                     //action: () => {},
                   },
                   {
                     title: "Agriculture",
                     image:
                       "/Images/canola-fields-1911392-scaled.jpg",
-                    description: "Enhancing agricultural productivity through biotechnology innovations.",
-                    link: "Visit Invitris for Agriculture",
+                    description: "Enable innovative technologies to enhance agricultural productivity and sustainability",
+                    //link: "Visit Invitris for Agriculture",
                     //action: () => {},
                   }
                 ].map((market, index) => (
@@ -388,27 +397,12 @@ export default function LandingPage() {
                         src={market.image || "/placeholder.svg"}
                         alt={market.title}
                         fill
-                        className={`transition-transform group-hover:scale-105 ${
-                          market.title === "Industrial Biotechnology" 
-                            ? "object-cover object-center" 
-                            : "object-cover"
-                        }`}
+                        className="object-cover transition-transform group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/70" />
-                      <div className={`absolute inset-0 p-8 flex flex-col ${
-                        market.title === "Industrial Biotechnology" 
-                          ? "justify-center items-center text-center" 
-                          : "justify-end"
-                      }`}>
+                      <div className="absolute inset-0 p-8 flex flex-col justify-center items-center text-center">
                         <h3 className="text-3xl font-bold text-white mb-3">{market.title}</h3>
-                        <p className="text-white text-base mb-5">{market.description}</p>
-                        <button
-                          //onClick={market.action}
-                          className="flex items-center text-white hover:text-teal-400 transition-colors text-base"
-                        >
-                          {market.link}
-                          <ArrowRight className="ml-2 h-5 w-5" />
-                        </button>
+                        <p className="text-white text-base">{market.description}</p>
                       </div>
                     </div>
                   </div>
@@ -436,10 +430,10 @@ export default function LandingPage() {
                 <div className="text-center p-8 max-w-md">
                   <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm text-gray-100 mb-4">Partnership</div>
                   <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                    Co-Development: Research Collaboration
+                    Co-development & Licensing
                   </h3>
                   <p className="text-white text-lg">
-                    Join forces with our research team to drive innovation in biotechnology.
+                    Partner with us to accelerate discovery and develop novel proteins through joint research, co-development, and flexible licensing, turning ideas into market-ready solutions
                   </p>
                   {/* <Button className="mt-6 bg-[#1a3d5c] text-white hover:bg-[#152f47]">
                     Learn More
@@ -461,10 +455,10 @@ export default function LandingPage() {
                 <div className="text-center p-8 max-w-md">
                   <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm text-gray-100 mb-4">Partnership</div>
                   <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                    Manufacturing: Scale Your Production
+                    Seamlessly Scale Your Biotech Production
                   </h3>
                   <p className="text-white text-lg">
-                    Partner with us to scale your biotech production with cutting-edge technology.
+                    Partner with us to scale your biotech manufacturing from cell-free validation to GMP-compliant large-scale production, leveraging advanced technologies for consistent, efficient, and high-quality output
                   </p>
                   {/* <Button className="mt-6 bg-[#1a3d5c] text-white hover:bg-[#152f47]">
                     Learn More
