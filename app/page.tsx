@@ -361,7 +361,7 @@ export default function LandingPage() {
                   {
                     title: "Biopharmaceuticals",
                     image:
-                      "/Images/bacteria-163711_1920.jpg",
+                      "/Images/biopharmaceuticals image.jpg",
                     description: "Deliver advanced solutions to accelerate drug discovery and therapeutic development",
                     //link: "Visit Invitris for Biopharmaceuticals",
                     //action: () => {},
@@ -369,7 +369,7 @@ export default function LandingPage() {
                   {
                     title: "AMR and Phage production",
                     image:
-                      "/Images/shutterstock_2036605904-scaled.jpg",
+                      "/Images/AMR and phages image.png",
                     description: "Develop targeted phage engineering appraoches to combat antimicrobial resistance",
                     //link: "Visit Invitris for AMR and Phages",
                     //action: () => setIsAmrModalOpen(true),
@@ -377,7 +377,7 @@ export default function LandingPage() {
                   {
                     title: "Industrial Biotechnology",
                     image:
-                      "/Images/ai-generated-8846860_1920.jpg",
+                      "/Images/industrial biotech image.jpg",
                     description: "Provide robust biotechnological solutions for industrial processes and enzyme production",
                     //link: "Visit Invitris for Industrial",
                     //action: () => {},
@@ -385,7 +385,7 @@ export default function LandingPage() {
                   {
                     title: "Agriculture",
                     image:
-                      "/Images/canola-fields-1911392-scaled.jpg",
+                      "/Images/agriculture 3.jpg",
                     description: "Enable innovative technologies to enhance agricultural productivity and sustainability",
                     //link: "Visit Invitris for Agriculture",
                     //action: () => {},
@@ -446,7 +446,7 @@ export default function LandingPage() {
             {/* Manufacturing Partnership */}
             <div className="w-full lg:w-1/2 relative h-[800px] lg:h-[1000px] group overflow-hidden">
               <Image
-                src="/Images/pharmaceutical-factory-woman-worker-protective-clothing-operating-production-line-sterile-environment-scaled.jpg"
+                src="/Images/s.jpeg"
                 alt="Industrial Manufacturing"
                 fill
                 className="object-cover transition-transform group-hover:scale-105"
@@ -520,7 +520,7 @@ export default function LandingPage() {
               </p>
             </div>
             <div className="flex justify-center">
-              <Link href="/about/contact">
+              <Link href="mailto:contact@invitris.com">
                 <Button 
                   className="bg-[#1a3d5c] text-white hover:bg-[#152f47] w-[160px]"
                 >

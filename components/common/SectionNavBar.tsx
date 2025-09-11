@@ -6,6 +6,26 @@ import { useState } from "react"
 import { useRouter, usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 
+
+// --- helper for hover underline ---
+function HoverUnderline({
+  className = "",
+  children,
+}: React.PropsWithChildren<{ className?: string }>) {
+  return (
+    <span className={`relative inline-block group ${className}`}>
+      {children}
+      <span
+        className="
+          pointer-events-none absolute left-0 -bottom-1 h-0.5 w-0
+          bg-white transition-all duration-300 group-hover:w-full
+        "
+      />
+    </span>
+  )
+}
+
+
 export function SectionNavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const router = useRouter()
@@ -29,12 +49,14 @@ export function SectionNavBar() {
     setIsMenuOpen(false)
   }
 
-  const navItems = [
+  type NavItem = { label: string; id?: string; href?: string }
+
+  const navItems: NavItem[] = [
     { label: "Technology", id: "cell-free" },
     { label: "Features", id: "features" },
     { label: "Markets", id: "markets" },
     { label: "News", id: "news" },
-    { label: "About Us", href: "/about/company" }
+    //{ label: "About Us", href: "/about/company" }
   ]
 
   return (
@@ -57,18 +79,18 @@ export function SectionNavBar() {
             {navItems.map((item) => (
               <div key={item.label}>
                 {item.href ? (
-                  <Link 
+                  <Link
                     href={item.href}
-                    className="text-gray-200 hover:text-white transition-colors text-xl font-medium"
+                    className="text-xl font-medium text-gray-200 hover:text-white"
                   >
-                    {item.label}
+                    <HoverUnderline>{item.label}</HoverUnderline>
                   </Link>
                 ) : (
                   <button
                     onClick={() => scrollToSection(item.id!)}
-                    className="text-gray-200 hover:text-white transition-colors text-xl font-medium"
+                    className="text-xl font-medium text-gray-200 hover:text-white"
                   >
-                    {item.label}
+                    <HoverUnderline>{item.label}</HoverUnderline>
                   </button>
                 )}
               </div>
@@ -77,8 +99,8 @@ export function SectionNavBar() {
 
           {/* Right side - Contact button for desktop */}
           <div className="hidden md:flex">
-            <Link href="/about/contact">
-              <button className="bg-black text-white hover:bg-gray-900 px-6 py-3 rounded-full text-lg font-medium transition-colors">
+            <Link href="mailto:contact@invitris.com">
+              <button className="bg-black text-white hover:text-gray-400 px-6 py-3 rounded-full text-lg font-medium transition-colors">
                 Contact
               </button>
             </Link>
@@ -118,7 +140,7 @@ export function SectionNavBar() {
                 </div>
               ))}
               <div className="pt-4 border-t border-gray-700">
-                <Link href="/about/contact">
+                <Link href="mailto:contact@invitris.com">
                   <button 
                     className="bg-black text-white hover:bg-gray-900 px-6 py-3 rounded-full text-lg font-medium transition-colors w-full"
                     onClick={() => setIsMenuOpen(false)}
