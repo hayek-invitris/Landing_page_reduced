@@ -99,11 +99,12 @@ export function SectionNavBar() {
 
           {/* Right side - Contact button for desktop */}
           <div className="hidden md:flex">
-            <Link href="mailto:contact@invitris.com">
-              <button className="bg-black text-white hover:text-gray-400 px-6 py-3 rounded-full text-lg font-medium transition-colors">
-                Contact
-              </button>
-            </Link>
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="bg-black text-white hover:text-gray-400 px-6 py-3 rounded-full text-lg font-medium transition-colors"
+            >
+              Contact
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
