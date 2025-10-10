@@ -56,6 +56,7 @@ export function SectionNavBar() {
     { label: "Features", id: "features" },
     { label: "Markets", id: "markets" },
     { label: "News", id: "news" },
+    { label: "Careers", href: "http://careers.invitris.com" },
     //{ label: "About Us", href: "/about/company" }
   ]
 
@@ -82,6 +83,8 @@ export function SectionNavBar() {
                   <Link
                     href={item.href}
                     className="text-xl font-medium text-gray-200 hover:text-white"
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   >
                     <HoverUnderline>{item.label}</HoverUnderline>
                   </Link>
@@ -99,11 +102,11 @@ export function SectionNavBar() {
 
           {/* Right side - Contact button for desktop */}
           <div className="hidden md:flex">
-            <button 
+            <button
               onClick={() => scrollToSection('contact')}
-              className="bg-black text-white hover:text-gray-400 px-6 py-3 rounded-full text-lg font-medium transition-colors"
+              className="text-xl font-medium text-gray-200 hover:text-white transition-colors"
             >
-              Contact
+              <HoverUnderline>Contact</HoverUnderline>
             </button>
           </div>
 
@@ -127,6 +130,8 @@ export function SectionNavBar() {
                       href={item.href}
                       className="text-gray-200 hover:text-white transition-colors text-lg font-medium block py-2"
                       onClick={() => setIsMenuOpen(false)}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     >
                       {item.label}
                     </Link>

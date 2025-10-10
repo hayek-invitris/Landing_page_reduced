@@ -46,3 +46,7 @@ next-env.d.ts
 .env.test.local
 .env.production.local
 
+# ignore contact form and server actions as requested
+components/landing/contact.tsx
+lib/actions.ts
+

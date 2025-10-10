@@ -13,7 +13,7 @@ import { AmrPhagesModal } from "@/components/landing/AmrPhagesModal"
 import { NewsModal } from "@/components/landing/NewsModal"
 import { useState, useEffect, useRef } from "react"
 import { Infinity } from "lucide-react";
-import { ContactForm } from "@/components/landing/contact"
+// Contact form removed in favor of static email contact information
 
 
 
@@ -526,7 +526,21 @@ export default function LandingPage() {
               Let&apos;s discuss your needs and discover the possibilities together.
             </p>
           </div>
-          <ContactForm />
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center py-6 px-6 md:px-8 bg-gray-900/60 border border-gray-800 rounded-xl">
+              <p className="text-gray-200 text-lg md:text-xl">
+                Please contact us via
+                {" "}
+                <a
+                  href="mailto:contact@invitris.com"
+                  className="text-white underline hover:text-teal-300"
+                >
+                  contact@invitris.com
+                </a>
+                .
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

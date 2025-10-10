@@ -148,6 +148,14 @@ export function NavBar() {
             <Link className="text-gray-200 hover:text-white transition-colors text-xl font-medium" href="/technology">
               Technology
             </Link>
+            <Link
+              className="text-gray-200 hover:text-white transition-colors text-xl font-medium"
+              href="http://careers.invitris.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Careers
+            </Link>
             <Submenu
               label="Industries"
               items={[
@@ -211,6 +219,15 @@ export function NavBar() {
               onClick={closeMobileMenu}
             >
               Technology
+            </Link>
+            <Link 
+              className="text-gray-200 hover:text-white transition-colors text-2xl font-medium py-2"
+              href="http://careers.invitris.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMobileMenu}
+            >
+              Careers
             </Link>
             
             {/* Mobile Industries Submenu */}
