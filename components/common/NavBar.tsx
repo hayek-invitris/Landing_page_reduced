@@ -135,7 +135,7 @@ export function NavBar() {
         <div className="container mx-auto px-4 h-full flex items-center">
           <Link className="flex items-center" href="/">
             <Image
-              src="/Images/21-1__2_-removebg-preview.png"
+              src="/Images/invitris_logo_clean_transparent.png"
               alt="Invitris Logo"
               width={180}
               height={48}
@@ -176,7 +176,7 @@ export function NavBar() {
           </nav>
           
           {/* Desktop Right Links - Hidden on mobile */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-12 md:ml-12">
             <Link className="text-gray-200 hover:text-white transition-colors text-xl font-medium" href="/about/contact">
               Contact
             </Link>

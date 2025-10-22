@@ -154,3 +154,21 @@ body {
 .custom-shadow {
   box-shadow: 0 0 100px 8px rgba(0,0,0,0.15);
 }
+
+/* Cookie Consent Custom Styles */
+.cookie-consent-container {
+  z-index: 999 !important;
+}
+
+.cookie-accept-button:hover {
+  background-color: #0f766e !important;
+}
+
+.cookie-decline-button:hover {
+  background-color: #4b5563 !important;
+}
+
+/* Ensure proper z-index hierarchy */
+.CookieConsent {
+  z-index: 50 !important;
+}

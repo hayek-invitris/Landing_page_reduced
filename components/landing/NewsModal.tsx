@@ -10,6 +10,7 @@ interface NewsArticle {
   link: string
   hasExternalLink: boolean
   date: string
+  linkText?: string
 }
 
 interface NewsModalProps {
@@ -44,12 +45,6 @@ export function NewsModal({ article }: NewsModalProps) {
         {/* Main content */}
         <div className="text-slate-300 space-y-4 mb-8">
           <p className="text-lg">{article.content}</p>
-          
-          <p>
-            Our research team has been working tirelessly to advance this technology,
-            with potential applications spanning multiple areas of biotechnology and medicine.
-            The implications for future research and development are significant.
-          </p>
         </div>
         
         {/* Action button */}
@@ -57,7 +52,7 @@ export function NewsModal({ article }: NewsModalProps) {
           <div className="flex justify-center mt-8">
             <Link href={article.link}>
               <Button className="bg-[#1a3d5c] text-white hover:bg-[#152f47] px-8 py-6">
-                Read Full Article
+                {article.linkText || "Read Full Article"}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>

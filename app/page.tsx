@@ -71,12 +71,22 @@ export default function LandingPage() {
 
   const newsItems = [
     {
+      title: "Buchtipp aus der Community",
+      image: "/Images/DSC_9486.jpg",
+      link: "https://mybook.to/HonorableEntrepreneur",
+      hasExternalLink: true,
+      date: "Oktober 22, 2025",
+      content: " The Honorable Entrepreneur – die NanoTemper‑Gründerstory ohne VC, mit Haltung. Praktische Learnings & sieben Prinzipien für verantwortungsvolles Wachstum. Launch am 23.10.",
+      linkText: "Get the Book"
+    },
+    {
       title: "You shall not pass: Wie zellfreie Moleküle das Böse bekämpfen",
       image: "/Images/dna-g1adaf9d6b_1920.jpg",
       link: "https://www.im-io.de/you-shall-not-pass-wie-zellfreie-molekuele-das-boese-bekaempfen/",
       hasExternalLink: true,
       date: "August 15, 2025",
-      content: "In this IM+io interview, our CEO Patrick Grossmann describes how their cell-free system synthetically produces bacteriophages, antibodies and even vaccines directly from DNA templates—eliminating the need for traditional cell cultures and enabling precise, rapid manufacturing of targeted therapeutics. Leveraging AI-driven optimization of reaction conditions and an automated phage printer developed with EIC Accelerator support, they aim to generate personalized treatments against antibiotic-resistant infections in under eight hours. Beyond healthcare, Invitris' versatile platform can also be licensed for nanobody production, vaccine development and applications in agriculture or environmental biotechnology."
+      content: "In this IM+io interview, our CEO Patrick Grossmann describes how their cell-free system synthetically produces bacteriophages, antibodies and even vaccines directly from DNA templates—eliminating the need for traditional cell cultures and enabling precise, rapid manufacturing of targeted therapeutics. Leveraging AI-driven optimization of reaction conditions and an automated phage printer developed with EIC Accelerator support, they aim to generate personalized treatments against antibiotic-resistant infections in under eight hours. Beyond healthcare, Invitris' versatile platform can also be licensed for nanobody production, vaccine development and applications in agriculture or environmental biotechnology.",
+      linkText: "Read the Interview"
     },
     {
       title: "Invitris wins EIC grant",
@@ -92,13 +102,14 @@ export default function LandingPage() {
       link: "https://www.izb-online.de/izb-biotech-news/invitris-erhaelt-250-000-euro-fuer-vollstaendige-ausgruendung-aus-der-tum-innovations-und-gruenderzentrum-biotechnologie-izb/",
       hasExternalLink: true,
       date: "May 15, 2023",
-      content: "In May 2023, Invitris was selected by INCATE as the first company to receive a €250 000 Phase II grant—enabling the completion of its spin-out from the TUM's Chair of Synthetic Biological Systems and the scale-up of antimicrobial protein production to combat antibiotic resistance. The funding will support the transition of Invitris' cell-free platform into a GMP-compliant process for manufacturing bacteriophages, phage-derived endolysins and other antimicrobial proteins at scale. Having proven its technology and business model during INCATE Phase I (January 2022) and secured a place in Y Combinator's Winter '23 cohort, Invitris is now poised to accelerate next-generation phage therapies toward broad clinical and industrial applications."
+      content: "In May 2023, Invitris was selected by INCATE as the first company to receive a €250 000 Phase II grant—enabling the completion of its spin-out from the TUM's Chair of Synthetic Biological Systems and the scale-up of antimicrobial protein production to combat antibiotic resistance. The funding will support the transition of Invitris' cell-free platform into a GMP-compliant process for manufacturing bacteriophages, phage-derived endolysins and other antimicrobial proteins at scale. Having proven its technology and business model during INCATE Phase I (January 2022) and secured a place in Y Combinator's Winter '23 cohort, Invitris is now poised to accelerate next-generation phage therapies toward broad clinical and industrial applications.",
+      linkText: "Read Full Article"
     },
     {
       title: "Invitris in one of the largest daily newspapers in 🇩🇪 !",
       image: "/Images/dna-g1adaf9d6b_1920.jpg",
-      link: "#",
-      hasExternalLink: false,
+      link: "https://www.sueddeutsche.de/muenchen/landkreismuenchen/martinsried-start-up-invitris-bakteriophagen-multiresistente-keime-lux.VcRC4iR2mWkateTgvQQW3a?reduced=true",
+      hasExternalLink: true,
       date: "March 8, 2023",
       content: "Discover how our cutting-edge biotechnology platforms are enabling researchers to push the boundaries of what's possible in multiple scientific disciplines."
     },
@@ -302,8 +313,19 @@ export default function LandingPage() {
           </div>
           <div className="container px-4 md:px-6 relative z-10">
             <div className="grid lg:grid-cols-[2fr,1fr] gap-12 items-start">
-              {/* Feature boxes on the left */}
-              <div className="grid gap-8 md:grid-cols-2">
+              {/* Heading on the left (mobile: order-1 to appear first) */}
+              <div className="space-y-6 lg:sticky lg:top-24 order-1 lg:order-2">
+                <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm text-gray-100">Features</div>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
+                  Our Solutions
+                </h2>
+                <p className="text-gray-300 text-lg md:text-xl">
+                  We partner across life sciences to tackle challenges and enable innovation in research and development
+                </p>
+              </div>
+              
+              {/* Feature boxes on the right (mobile: order-2 to appear second) */}
+              <div className="grid gap-8 md:grid-cols-2 order-2 lg:order-1">
                 {[
                   {
                     icon: Syringe,
@@ -336,17 +358,6 @@ export default function LandingPage() {
                     </div>
                   </div>
                 ))}
-              </div>
-              
-              {/* Heading on the right */}
-              <div className="space-y-6 lg:sticky lg:top-24">
-                <div className="inline-block rounded-lg bg-gray-800 px-3 py-1 text-sm text-gray-100">Features</div>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-                  Our Solutions
-                </h2>
-                <p className="text-gray-300 text-lg md:text-xl">
-                  We partner across life sciences to tackle challenges and enable innovation in research and development
-                </p>
               </div>
             </div>
           </div>

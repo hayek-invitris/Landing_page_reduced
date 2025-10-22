@@ -101,7 +101,7 @@ export function SectionNavBar() {
           </nav>
 
           {/* Right side - Contact button for desktop */}
-          <div className="hidden md:flex">
+          <div className="hidden md:flex md:ml-12">
             <button
               onClick={() => scrollToSection('contact')}
               className="text-xl font-medium text-gray-200 hover:text-white transition-colors"
