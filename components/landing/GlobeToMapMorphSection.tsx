@@ -120,8 +120,8 @@ export function GlobeToMapMorphSection({
   }, [arcs]);
 
   return (
-    <section className="w-full bg-black py-6 sm:py-10 md:py-16" id="global-map">
-      <div className="w-full max-w-7xl mx-auto px-4">
+    <section className="w-full bg-black py-6 sm:py-10 md:py-16 overflow-visible" id="global-map">
+      <div className="w-full max-w-7xl mx-auto px-4 overflow-visible">
         {/* Centered Text Above Both Elements */}
         <motion.div
           className="text-center mb-8 md:mb-16"
@@ -135,10 +135,10 @@ export function GlobeToMapMorphSection({
         </motion.div>
 
         {/* Globe and Chart Side by Side */}
-        <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 overflow-visible">
           {/* Left: Globe */}
           <motion.div 
-            className="w-full lg:w-1/2 flex flex-col items-center"
+            className="w-full lg:w-1/2 flex flex-col items-center overflow-visible"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
