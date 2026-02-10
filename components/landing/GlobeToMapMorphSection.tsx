@@ -43,9 +43,9 @@ export function GlobeToMapMorphSection({
     const updateDistance = () => {
       const width = window.innerWidth;
       if (width < 640) {
-        setCameraDistance(350); // Mobile: weiter weg
+        setCameraDistance(450); // Mobile: weiter weg
       } else if (width < 1024) {
-        setCameraDistance(320); // Tablet: mittel
+        setCameraDistance(360); // Tablet: mittel
       } else {
         setCameraDistance(290); // Desktop: näher
       }
