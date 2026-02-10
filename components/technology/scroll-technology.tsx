@@ -58,7 +58,7 @@ export function ScrollTechnology({ points }: { points: TechPoint[] }) {
                 <div
                   key={index}
                   className={`absolute w-4 h-4 -ml-2 rounded-full transition-all duration-500 ${
-                    index <= activeIndex ? "bg-[#1a3d5c]" : "bg-white/20"
+                    index <= activeIndex ? "bg-[#B43632]" : "bg-white/20"
                   }`}
                   style={{
                     top: `${(y / 400) * 100}%`,

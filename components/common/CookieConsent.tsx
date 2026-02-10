@@ -72,7 +72,7 @@ export default function CookieConsent() {
           alignItems: 'center',
         }}
         buttonStyle={{
-          background: '#0d9488',
+          background: '#B43632',
           color: 'white',
           fontSize: '14px',
           fontWeight: '500',

@@ -48,6 +48,6 @@ export function FeaturedLogos({ logos }: { logos: Logo[] }) {
     })
   }, [logos])
 
-  return <div ref={containerRef} className="relative h-32 bg-[#1a3d5c] rounded-lg overflow-hidden mx-auto max-w-6xl" />
+  return <div ref={containerRef} className="relative h-32 bg-[#B43632] rounded-lg overflow-hidden mx-auto max-w-6xl" />
 }
 

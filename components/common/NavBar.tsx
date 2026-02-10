@@ -135,7 +135,7 @@ export function NavBar() {
         <div className="container mx-auto px-4 h-full flex items-center">
           <Link className="flex items-center" href="/">
             <Image
-              src="/Images/invitris_logo_clean_transparent.png"
+              src="/Images/21-1__2_-removebg-preview.png"
               alt="Invitris Logo"
               width={180}
               height={48}

@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
+  // Allow cross-origin requests in development from network IP
+  allowedDevOrigins: ['http://192.168.178.40:3000', 'http://192.168.178.40:3001', 'http://192.168.178.40:3002', '192.168.178.40'],
   // Headers for better Safari compatibility
   async headers() {
     return [

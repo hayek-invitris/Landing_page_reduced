@@ -51,7 +51,7 @@ export function NewsModal({ article }: NewsModalProps) {
         {article.hasExternalLink && (
           <div className="flex justify-center mt-8">
             <Link href={article.link}>
-              <Button className="bg-[#1a3d5c] text-white hover:bg-[#152f47] px-8 py-6">
+              <Button className="bg-[#B43632] text-white hover:bg-[#8B2C28] px-8 py-6">
                 {article.linkText || "Read Full Article"}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

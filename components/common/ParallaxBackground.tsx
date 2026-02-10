@@ -21,7 +21,8 @@ export function ParallaxBackground() {
   }, [])
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-white">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-black">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#B43632]/15 via-[#8B2C28]/10 to-black/60" />
       <div 
         className="absolute inset-0 transform"
         style={{ 

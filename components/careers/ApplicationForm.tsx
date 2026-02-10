@@ -112,7 +112,7 @@ export function ApplicationForm({ title, department, isOpen, onClose, positionId
     <Dialog isOpen={isOpen} onClose={onClose} title={`Apply for ${title}`}>
       {!submitted ? (
         <form onSubmit={handleSubmit} className="space-y-8">
-          <div className="bg-[#1a3d5c]/20 p-6 rounded-lg border border-[#1a3d5c]/40">
+          <div className="bg-[#B43632]/20 p-6 rounded-lg border border-[#B43632]/40">
             <p className="text-gray-200 text-lg">
               Join our team in the <span className="font-semibold text-white">{department}</span> department and help shape the future of biotechnology.
             </p>
@@ -220,14 +220,14 @@ export function ApplicationForm({ title, department, isOpen, onClose, positionId
               accept=".pdf"
               //required
               onChange={handleFileChange}
-              className="block w-full rounded-md bg-black/70 border border-white/20 text-white p-3 shadow-sm file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-[#1a3d5c] file:text-white hover:file:bg-[#152f47] text-lg"
+              className="block w-full rounded-md bg-black/70 border border-white/20 text-white p-3 shadow-sm file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-[#B43632] file:text-white hover:file:bg-[#8B2C28] text-lg"
             />
           </div>
           
           <div className="flex justify-end pt-4">
             <Button 
               type="submit" 
-              className="bg-[#1a3d5c] text-white hover:bg-[#152f47] px-8 py-6 text-lg"
+              className="bg-[#B43632] text-white hover:bg-[#8B2C28] px-8 py-6 text-lg"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Submit Application"}
@@ -236,7 +236,7 @@ export function ApplicationForm({ title, department, isOpen, onClose, positionId
         </form>
       ) : (
         <div className="text-center py-16 max-w-2xl mx-auto">
-          <div className="bg-[#1a3d5c]/20 p-8 rounded-lg border border-[#1a3d5c]/40">
+          <div className="bg-[#B43632]/20 p-8 rounded-lg border border-[#B43632]/40">
             <h3 className="text-2xl font-bold text-white mb-6">Thank You for Applying!</h3>
             <p className="text-gray-200 text-lg mb-8">
               We have received your application for the <span className="font-semibold text-white">{title}</span> position. 
@@ -244,7 +244,7 @@ export function ApplicationForm({ title, department, isOpen, onClose, positionId
             </p>
             <Button 
               onClick={onClose}
-              className="bg-[#1a3d5c] text-white hover:bg-[#152f47] px-8 py-6 text-lg"
+              className="bg-[#B43632] text-white hover:bg-[#8B2C28] px-8 py-6 text-lg"
             >
               Close
             </Button>
