@@ -36,9 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-clip`}
       >
-        {children}
+        <div className="overflow-x-clip w-full">
+          {children}
+        </div>
         <Analytics />
         <VercelAnalytics />
         <Marketing />

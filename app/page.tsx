@@ -174,7 +174,7 @@ export default function LandingPage() {
   ]
 
   return (
-    <div className="flex flex-col min-h-screen relative bg-black text-white">
+    <div className="flex flex-col min-h-screen relative bg-black text-white overflow-x-clip">
       <SectionNavBar />
       
       <main className="flex-1">

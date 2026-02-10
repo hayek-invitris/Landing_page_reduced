@@ -208,13 +208,13 @@ export function GlobeToMapMorphSection({
 
           {/* Right: Chart */}
           <motion.div 
-            className="w-full lg:w-1/2 flex flex-col items-center"
+            className="w-full lg:w-1/2 flex flex-col items-center px-2 sm:px-0"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <svg viewBox="0 0 800 500" className="w-full h-auto max-w-full" preserveAspectRatio="xMidYMid meet"
-              style={{ maxHeight: '500px' }}
+              style={{ maxHeight: '500px', minHeight: '300px' }}
             >
               {/* Definitions for gradients and filters */}
               <defs>
@@ -339,8 +339,8 @@ export function GlobeToMapMorphSection({
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: 2.3 }}
               >
-                <rect x="555" y="185" width="180" height="60" rx="10" fill="rgba(180, 54, 50, 0.15)" stroke="#B43632" strokeWidth="1" strokeOpacity="0.4" />
-                <text x="645" y="222" fill="white" fontSize="22" fontWeight="600" textAnchor="middle" filter="url(#glow)">
+                <rect x="555" y="185" width="180" height="60" rx="10" fill="rgba(180, 54, 50, 0.25)" stroke="#B43632" strokeWidth="2" strokeOpacity="0.7" />
+                <text x="645" y="222" fill="white" fontSize="24" fontWeight="700" textAnchor="middle" filter="url(#glow)">
                   Synthesis Gap
                 </text>
               </motion.g>
