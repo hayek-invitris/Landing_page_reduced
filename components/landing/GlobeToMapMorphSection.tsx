@@ -277,7 +277,7 @@ export function GlobeToMapMorphSection({
                 fill="url(#gapGradient)"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 1.2, delay: 1.5 }}
               />
               <motion.path
@@ -289,7 +289,7 @@ export function GlobeToMapMorphSection({
                 opacity="0.4"
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 2, delay: 2 }}
               />
               
@@ -302,7 +302,7 @@ export function GlobeToMapMorphSection({
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 2, delay: 0.4, ease: "easeOut" }}
               />
               
@@ -317,7 +317,7 @@ export function GlobeToMapMorphSection({
                 opacity="0.3"
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 2, delay: 0.6, ease: "easeOut" }}
               />
               <motion.path
@@ -328,7 +328,7 @@ export function GlobeToMapMorphSection({
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 2, delay: 0.6, ease: "easeOut" }}
               />
               
@@ -336,7 +336,7 @@ export function GlobeToMapMorphSection({
               <motion.g
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.6, delay: 2.3 }}
               >
                 <rect x="555" y="185" width="180" height="60" rx="10" fill="rgba(180, 54, 50, 0.25)" stroke="#B43632" strokeWidth="2" strokeOpacity="0.7" />
@@ -363,7 +363,7 @@ export function GlobeToMapMorphSection({
                   textAnchor="middle"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.1 }}
                   transition={{ duration: 0.4, delay: 0.2 + 0.1 * i }}
                 >
                   {item.year}
@@ -388,7 +388,7 @@ export function GlobeToMapMorphSection({
                     opacity="0.3"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: [0, 1.5, 1] }}
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.6, delay: 1 + i * 0.15 }}
                   />
                   <motion.circle
@@ -399,7 +399,7 @@ export function GlobeToMapMorphSection({
                     filter="url(#glow)"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.5, delay: 1 + i * 0.15 }}
                   />
                 </motion.g>
@@ -421,7 +421,7 @@ export function GlobeToMapMorphSection({
                   fill="#9CA3AF"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.1 }}
                   transition={{ duration: 0.5, delay: 0.8 + i * 0.15 }}
                 />
               ))}
