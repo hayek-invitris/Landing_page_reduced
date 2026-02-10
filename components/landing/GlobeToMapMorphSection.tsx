@@ -20,7 +20,7 @@ export function GlobeToMapMorphSection({
   mapPoints: CityPoint[];
   arcs?: Arc[];
 }) {
-  const globeRef = useRef<GlobeMethods | null>(null);
+  const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const [cameraDistance, setCameraDistance] = useState(290);
   const [globeLoaded, setGlobeLoaded] = useState(false);
   const [webGLSupported, setWebGLSupported] = useState(true);

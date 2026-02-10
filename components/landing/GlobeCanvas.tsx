@@ -2,6 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
+import type { GlobeMethods } from "react-globe.gl";
 
 const Globe = dynamic(() => import("react-globe.gl"), {
   ssr: false,
@@ -107,7 +108,7 @@ export default function GlobeCanvas({
   freeze?: boolean;
 }) {
   const containerRef = React.useRef<HTMLDivElement | null>(null);
-  const globeRef = React.useRef<GlobeMethods | null>(null);
+  const globeRef = React.useRef<GlobeMethods | undefined>(undefined);
   const [diameter, setDiameter] = React.useState(0);
 
   // responsive sizing via ResizeObserver
