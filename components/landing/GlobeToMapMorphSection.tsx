@@ -288,9 +288,8 @@ export function GlobeToMapMorphSection({
                 stroke="#B43632"
                 strokeWidth="1"
                 strokeDasharray="8 4"
-                opacity="0.4"
-                initial={{ pathLength: 0 }}
-                animate={isChartInView ? { pathLength: 1 } : { pathLength: 0 }}
+                initial={{ opacity: 0 }}
+                animate={isChartInView ? { opacity: 0.4 } : { opacity: 0 }}
                 transition={{ duration: 2, delay: 2 }}
               />
               
@@ -301,9 +300,9 @@ export function GlobeToMapMorphSection({
                 strokeWidth="3"
                 fill="none"
                 strokeLinecap="round"
-                initial={{ pathLength: 0 }}
-                animate={isChartInView ? { pathLength: 1 } : { pathLength: 0 }}
-                transition={{ duration: 2, delay: 0.4, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={isChartInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
               />
               
               {/* GenAI designs line (linear growth) - straight line with glow */}
@@ -314,10 +313,9 @@ export function GlobeToMapMorphSection({
                 fill="none"
                 strokeLinecap="round"
                 filter="url(#softGlow)"
-                opacity="0.3"
-                initial={{ pathLength: 0 }}
-                animate={isChartInView ? { pathLength: 1 } : { pathLength: 0 }}
-                transition={{ duration: 2, delay: 0.6, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={isChartInView ? { opacity: 0.3 } : { opacity: 0 }}
+                transition={{ duration: 1.5, delay: 0.6, ease: "easeOut" }}
               />
               <motion.path
                 d="M 150 395 L 300 300 L 450 204 L 550 141 L 600 109 L 700 45"
@@ -325,9 +323,9 @@ export function GlobeToMapMorphSection({
                 strokeWidth="3.5"
                 fill="none"
                 strokeLinecap="round"
-                initial={{ pathLength: 0 }}
-                animate={isChartInView ? { pathLength: 1 } : { pathLength: 0 }}
-                transition={{ duration: 2, delay: 0.6, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={isChartInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 1.5, delay: 0.6, ease: "easeOut" }}
               />
               
               {/* Synthesis gap label - centered and styled */}
