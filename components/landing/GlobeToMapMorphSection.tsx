@@ -287,10 +287,12 @@ export function GlobeToMapMorphSection({
                 fill="none"
                 stroke="#B43632"
                 strokeWidth="1"
-                strokeDasharray="8 4"
-                initial={{ opacity: 0 }}
-                animate={isChartInView ? { opacity: 0.4 } : { opacity: 0 }}
-                transition={{ duration: 2, delay: 2 }}
+                pathLength="1"
+                strokeDasharray="0.02 0.01"
+                opacity="0.4"
+                initial={{ strokeDashoffset: 1 }}
+                animate={isChartInView ? { strokeDashoffset: 0 } : { strokeDashoffset: 1 }}
+                transition={{ duration: 2, delay: 2, ease: "easeOut" }}
               />
               
               {/* Manufactured molecules line (slow growth) - smooth curve */}
@@ -300,9 +302,11 @@ export function GlobeToMapMorphSection({
                 strokeWidth="3"
                 fill="none"
                 strokeLinecap="round"
-                initial={{ opacity: 0 }}
-                animate={isChartInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
+                pathLength="1"
+                strokeDasharray="1"
+                initial={{ strokeDashoffset: 1 }}
+                animate={isChartInView ? { strokeDashoffset: 0 } : { strokeDashoffset: 1 }}
+                transition={{ duration: 2, delay: 0.4, ease: "easeOut" }}
               />
               
               {/* GenAI designs line (linear growth) - straight line with glow */}
@@ -313,9 +317,12 @@ export function GlobeToMapMorphSection({
                 fill="none"
                 strokeLinecap="round"
                 filter="url(#softGlow)"
-                initial={{ opacity: 0 }}
-                animate={isChartInView ? { opacity: 0.3 } : { opacity: 0 }}
-                transition={{ duration: 1.5, delay: 0.6, ease: "easeOut" }}
+                opacity="0.3"
+                pathLength="1"
+                strokeDasharray="1"
+                initial={{ strokeDashoffset: 1 }}
+                animate={isChartInView ? { strokeDashoffset: 0 } : { strokeDashoffset: 1 }}
+                transition={{ duration: 2, delay: 0.6, ease: "easeOut" }}
               />
               <motion.path
                 d="M 150 395 L 300 300 L 450 204 L 550 141 L 600 109 L 700 45"
@@ -323,9 +330,11 @@ export function GlobeToMapMorphSection({
                 strokeWidth="3.5"
                 fill="none"
                 strokeLinecap="round"
-                initial={{ opacity: 0 }}
-                animate={isChartInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 1.5, delay: 0.6, ease: "easeOut" }}
+                pathLength="1"
+                strokeDasharray="1"
+                initial={{ strokeDashoffset: 1 }}
+                animate={isChartInView ? { strokeDashoffset: 0 } : { strokeDashoffset: 1 }}
+                transition={{ duration: 2, delay: 0.6, ease: "easeOut" }}
               />
               
               {/* Synthesis gap label - centered and styled */}

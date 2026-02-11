@@ -773,7 +773,7 @@ export default function LandingPage() {
                     onChange={handleContactChange}
                     required
                     maxLength={100}
-                    className="w-full px-4 py-3 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:border-[#B43632] focus:ring-1 focus:ring-[#B43632] transition-colors"
+                    className="w-full px-4 py-3 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:border-[#B43632] focus:ring-1 focus:ring-[#B43632] focus:outline-none focus:bg-black/90 transition-all duration-200"
                     placeholder="John"
                   />
                 </div>
@@ -789,7 +789,7 @@ export default function LandingPage() {
                     onChange={handleContactChange}
                     required
                     maxLength={100}
-                    className="w-full px-4 py-3 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:border-[#B43632] focus:ring-1 focus:ring-[#B43632] transition-colors"
+                    className="w-full px-4 py-3 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:border-[#B43632] focus:ring-1 focus:ring-[#B43632] focus:outline-none focus:bg-black/90 transition-all duration-200"
                     placeholder="Doe"
                   />
                 </div>
@@ -807,7 +807,7 @@ export default function LandingPage() {
                   value={contactForm.email}
                   onChange={handleContactChange}
                   required
-                  className="w-full px-4 py-3 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:border-[#B43632] focus:ring-1 focus:ring-[#B43632] transition-colors"
+                  className="w-full px-4 py-3 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:border-[#B43632] focus:ring-1 focus:ring-[#B43632] focus:outline-none focus:bg-black/90 transition-all duration-200"
                   placeholder="john.doe@company.com"
                 />
               </div>
@@ -825,7 +825,7 @@ export default function LandingPage() {
                   onChange={handleContactChange}
                   required
                   maxLength={100}
-                  className="w-full px-4 py-3 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:border-[#B43632] focus:ring-1 focus:ring-[#B43632] transition-colors"
+                  className="w-full px-4 py-3 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:border-[#B43632] focus:ring-1 focus:ring-[#B43632] focus:outline-none focus:bg-black/90 transition-all duration-200"
                   placeholder="Biotech Corp"
                 />
               </div>
@@ -843,7 +843,7 @@ export default function LandingPage() {
                   required
                   rows={5}
                   maxLength={5000}
-                  className="w-full px-4 py-3 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:border-[#B43632] focus:ring-1 focus:ring-[#B43632] transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-black/70 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:border-[#B43632] focus:ring-1 focus:ring-[#B43632] focus:outline-none focus:bg-black/90 transition-all duration-200 resize-none"
                   placeholder="Tell us about your project or how we can help..."
                 />
               </div>
