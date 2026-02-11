@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Globe from "react-globe.gl";
 import type { GlobeMethods } from "react-globe.gl";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 type LatLng = { lat: number; lng: number };
 type CityPoint = LatLng & { city?: string };
@@ -24,6 +24,8 @@ export function GlobeToMapMorphSection({
   const [cameraDistance, setCameraDistance] = useState(290);
   const [globeLoaded, setGlobeLoaded] = useState(false);
   const [webGLSupported, setWebGLSupported] = useState(true);
+  const chartRef = useRef<HTMLDivElement>(null);
+  const isChartInView = useInView(chartRef, { once: true, amount: 0.1 });
 
   // Check WebGL support
   useEffect(() => {
@@ -208,6 +210,7 @@ export function GlobeToMapMorphSection({
 
           {/* Right: Chart */}
           <motion.div 
+            ref={chartRef}
             className="w-full lg:w-1/2 flex flex-col items-center px-2 sm:px-0"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -271,13 +274,12 @@ export function GlobeToMapMorphSection({
                 <text x="30" y="45" fill="white" fontSize="14" fontWeight="500" opacity="0.95">Manufactured molecules</text>
               </g>
               
-              {/* Synthesis gap area - animated glow effect */}
+              {/* Synthesis gap area */}
               <motion.path
                 d="M 450 204 L 550 141 L 600 109 L 700 45 L 700 340 L 600 350 L 550 355 L 450 365 Z"
                 fill="url(#gapGradient)"
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.1 }}
+                animate={isChartInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 1.2, delay: 1.5 }}
               />
               <motion.path
@@ -288,8 +290,7 @@ export function GlobeToMapMorphSection({
                 strokeDasharray="8 4"
                 opacity="0.4"
                 initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                viewport={{ once: true, amount: 0.1 }}
+                animate={isChartInView ? { pathLength: 1 } : { pathLength: 0 }}
                 transition={{ duration: 2, delay: 2 }}
               />
               
@@ -301,8 +302,7 @@ export function GlobeToMapMorphSection({
                 fill="none"
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                viewport={{ once: true, amount: 0.1 }}
+                animate={isChartInView ? { pathLength: 1 } : { pathLength: 0 }}
                 transition={{ duration: 2, delay: 0.4, ease: "easeOut" }}
               />
               
@@ -316,8 +316,7 @@ export function GlobeToMapMorphSection({
                 filter="url(#softGlow)"
                 opacity="0.3"
                 initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                viewport={{ once: true, amount: 0.1 }}
+                animate={isChartInView ? { pathLength: 1 } : { pathLength: 0 }}
                 transition={{ duration: 2, delay: 0.6, ease: "easeOut" }}
               />
               <motion.path
@@ -327,16 +326,14 @@ export function GlobeToMapMorphSection({
                 fill="none"
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                viewport={{ once: true, amount: 0.1 }}
+                animate={isChartInView ? { pathLength: 1 } : { pathLength: 0 }}
                 transition={{ duration: 2, delay: 0.6, ease: "easeOut" }}
               />
               
               {/* Synthesis gap label - centered and styled */}
               <motion.g
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
+                animate={isChartInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: 2.3 }}
               >
                 <rect x="555" y="185" width="180" height="60" rx="10" fill="rgba(180, 54, 50, 0.25)" stroke="#B43632" strokeWidth="2" strokeOpacity="0.7" />
@@ -362,8 +359,7 @@ export function GlobeToMapMorphSection({
                   fontWeight="500" 
                   textAnchor="middle"
                   initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
+                  animate={isChartInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                   transition={{ duration: 0.4, delay: 0.2 + 0.1 * i }}
                 >
                   {item.year}
@@ -387,8 +383,7 @@ export function GlobeToMapMorphSection({
                     fill="#B43632"
                     opacity="0.3"
                     initial={{ scale: 0 }}
-                    whileInView={{ scale: [0, 1.5, 1] }}
-                    viewport={{ once: true, amount: 0.1 }}
+                    animate={isChartInView ? { scale: [0, 1.5, 1] } : { scale: 0 }}
                     transition={{ duration: 0.6, delay: 1 + i * 0.15 }}
                   />
                   <motion.circle
@@ -398,8 +393,7 @@ export function GlobeToMapMorphSection({
                     fill="#B43632"
                     filter="url(#glow)"
                     initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true, amount: 0.1 }}
+                    animate={isChartInView ? { scale: 1 } : { scale: 0 }}
                     transition={{ duration: 0.5, delay: 1 + i * 0.15 }}
                   />
                 </motion.g>
@@ -420,8 +414,7 @@ export function GlobeToMapMorphSection({
                   r="5"
                   fill="#9CA3AF"
                   initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true, amount: 0.1 }}
+                  animate={isChartInView ? { scale: 1 } : { scale: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 + i * 0.15 }}
                 />
               ))}
